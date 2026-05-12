@@ -106,7 +106,7 @@ export function AuthCard() {
         </div>
       </CardHeader>
       <CardContent>
-        <Tabs value={tab} onValueChange={setTab} className="w-full">
+        <Tabs value={tab} onValueChange={setTab} className="w-full flex-col">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="login">Iniciar sesión</TabsTrigger>
             <TabsTrigger value="register">Registrarse</TabsTrigger>

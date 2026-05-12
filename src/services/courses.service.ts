@@ -4,6 +4,12 @@ import type { CourseRow, LessonRow } from "@/types/database";
 
 export type CourseWithLessons = CourseRow & { lessons: LessonRow[] };
 
+function mergeWithFallback(courses: CourseWithLessons[]) {
+  const existingSlugs = new Set(courses.map((course) => course.slug));
+  const missing = FALLBACK_COURSES.filter((course) => !existingSlugs.has(course.slug));
+  return [...courses, ...missing].sort((a, b) => a.order_index - b.order_index);
+}
+
 function hasSupabaseEnv() {
   return (
     !!process.env.NEXT_PUBLIC_SUPABASE_URL &&
@@ -37,10 +43,11 @@ export async function getCoursesWithLessons(): Promise<CourseWithLessons[]> {
       arr.push(l);
       byCourse.set(l.course_id, arr);
     }
-    return (courses as CourseRow[]).map((c) => ({
+    const rows = (courses as CourseRow[]).map((c) => ({
       ...c,
       lessons: byCourse.get(c.id) ?? [],
     }));
+    return mergeWithFallback(rows);
   } catch {
     return FALLBACK_COURSES;
   }

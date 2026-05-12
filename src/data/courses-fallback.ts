@@ -146,4 +146,116 @@ export const FALLBACK_COURSES: (CourseRow & { lessons: LessonRow[] })[] = [
       ),
     ],
   },
+  {
+    id: "00000000-0000-4000-8000-000000000006",
+    title: "Incoterms y costos logísticos",
+    description:
+      "Aprende cómo los Incoterms reparten responsabilidades y cómo se construye un costo logístico internacional sin confundirte con siglas.",
+    category: "Costos",
+    slug: "incoterms-costos",
+    order_index: 6,
+    created_at: now,
+    lessons: [
+      lesson(
+        "00000000-0000-4000-8000-000000000061",
+        "00000000-0000-4000-8000-000000000006",
+        "Incoterms para principiantes",
+        "incoterms",
+        1,
+        "Compara EXW, FOB, CIF y DDP con ejemplos simples de quién paga y quién asume riesgos."
+      ),
+      lesson(
+        "00000000-0000-4000-8000-000000000062",
+        "00000000-0000-4000-8000-000000000006",
+        "Cómo estimar el costo total",
+        "costo-total",
+        2,
+        "Identifica flete, seguros, gastos portuarios, impuestos y entrega final en una estimación comercial."
+      ),
+    ],
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000007",
+    title: "Rutas, puertos y tiempos de tránsito",
+    description:
+      "Decide entre rutas directas, transbordos y puertos alternativos entendiendo impacto en costo, tiempo y confiabilidad.",
+    category: "Planificación",
+    slug: "rutas-puertos",
+    order_index: 7,
+    created_at: now,
+    lessons: [
+      lesson(
+        "00000000-0000-4000-8000-000000000071",
+        "00000000-0000-4000-8000-000000000007",
+        "Cómo elegir una ruta marítima",
+        "seleccion-ruta",
+        1,
+        "Aprende a comparar ruta directa, transbordo, frecuencia, congestión y promesa de entrega."
+      ),
+      lesson(
+        "00000000-0000-4000-8000-000000000072",
+        "00000000-0000-4000-8000-000000000007",
+        "Riesgos que cambian el ETA",
+        "riesgos-eta",
+        2,
+        "Clima, congestión, inspecciones y blank sailings explicados para anticipar retrasos."
+      ),
+    ],
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000008",
+    title: "Cadena de suministro internacional",
+    description:
+      "Conecta compras, inventario, proveedores, transporte y clientes para entender la logística como sistema de negocio.",
+    category: "Supply chain",
+    slug: "supply-chain-internacional",
+    order_index: 8,
+    created_at: now,
+    lessons: [
+      lesson(
+        "00000000-0000-4000-8000-000000000081",
+        "00000000-0000-4000-8000-000000000008",
+        "De la orden de compra al inventario",
+        "orden-inventario",
+        1,
+        "Aprende cómo una compra internacional afecta stock, caja, ventas y servicio al cliente."
+      ),
+      lesson(
+        "00000000-0000-4000-8000-000000000082",
+        "00000000-0000-4000-8000-000000000008",
+        "Gestión de proveedores y riesgos",
+        "proveedores-riesgos",
+        2,
+        "Evalúa proveedores con criterios simples: confiabilidad, documentación, tiempos y comunicación."
+      ),
+    ],
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000009",
+    title: "Mercancías especiales y seguridad",
+    description:
+      "Aprende a reconocer cargas refrigeradas, peligrosas, frágiles o sobredimensionadas y qué cuidados logísticos necesitan.",
+    category: "Seguridad",
+    slug: "mercancias-especiales",
+    order_index: 9,
+    created_at: now,
+    lessons: [
+      lesson(
+        "00000000-0000-4000-8000-000000000091",
+        "00000000-0000-4000-8000-000000000009",
+        "Carga refrigerada y cadena de frío",
+        "cadena-frio",
+        1,
+        "Entiende temperatura, preenfriado, energía, alarmas y decisiones para productos sensibles."
+      ),
+      lesson(
+        "00000000-0000-4000-8000-000000000092",
+        "00000000-0000-4000-8000-000000000009",
+        "Carga peligrosa y sobredimensionada",
+        "carga-especial",
+        2,
+        "Identifica cuándo una mercancía necesita declaración, embalaje, permisos o equipo especializado."
+      ),
+    ],
+  },
 ];

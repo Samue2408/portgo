@@ -477,6 +477,398 @@ export const LESSON_LIBRARY: Record<string, Record<string, LessonEnrichment>> = 
       ],
     },
   },
+  "incoterms-costos": {
+    incoterms: {
+      durationMin: 24,
+      objectives: [
+        "Entender para qué sirven los Incoterms en una compraventa internacional.",
+        "Comparar EXW, FOB, CIF y DDP con ejemplos prácticos.",
+        "Distinguir quién paga costos y quién asume riesgos en cada etapa.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. Introducción: los Incoterms reparten responsabilidades" },
+        {
+          type: "paragraph",
+          text: "Un Incoterm no es el precio de la mercancía ni el contrato completo. Es una regla que ayuda a definir hasta dónde llega la responsabilidad del vendedor y desde dónde comienza la del comprador. Para un emprendedor, entender esto evita pagar dos veces o dejar costos invisibles fuera del presupuesto.",
+        },
+        {
+          type: "conceptGrid",
+          title: "Cuatro Incoterms frecuentes",
+          items: [
+            {
+              term: "EXW",
+              explanation: "El vendedor deja la mercancía disponible en su instalación. El comprador gestiona casi todo el transporte.",
+              example: "Compras en fábrica y tú coordinas recogida, exportación, flete y destino.",
+            },
+            {
+              term: "FOB",
+              explanation: "El vendedor entrega la carga a bordo del buque en el puerto de origen.",
+              example: "El proveedor cubre origen hasta embarque; tú pagas flete internacional y destino.",
+            },
+            {
+              term: "CIF",
+              explanation: "El vendedor paga costo, seguro y flete hasta puerto de destino, con reglas específicas de riesgo.",
+              example: "Recibes precio con transporte marítimo incluido hasta el puerto.",
+            },
+            {
+              term: "DDP",
+              explanation: "El vendedor asume una responsabilidad amplia hasta entregar en destino con impuestos incluidos.",
+              example: "Te venden puerta a puerta, pero suele ser más caro por el riesgo asumido.",
+            },
+          ],
+        },
+        {
+          type: "caseStudy",
+          title: "Caso: precio barato que sale caro",
+          situation: "Un proveedor ofrece EXW muy barato. El comprador no calcula recogida, despacho de exportación ni flete.",
+          decision: "Comparar EXW contra FOB o CIF sumando costos reales antes de cerrar la compra.",
+          result: "El comprador descubre el costo total y evita una falsa sensación de ahorro.",
+        },
+        {
+          type: "checkpoint",
+          question: "Si compras FOB, ¿qué suele cubrir el vendedor?",
+          options: ["Entrega de la carga a bordo del buque en origen", "Todos los impuestos en destino", "La entrega final en tu almacén"],
+          answer: "Entrega de la carga a bordo del buque en origen",
+          explanation: "FOB normalmente ubica la entrega en el buque del puerto de origen. Desde allí, el comprador suele gestionar flete y destino.",
+        },
+        {
+          type: "checkpoint",
+          question: "¿Por qué EXW puede parecer barato al inicio?",
+          options: ["Porque deja muchos costos logísticos al comprador", "Porque siempre incluye seguro internacional", "Porque elimina la aduana"],
+          answer: "Porque deja muchos costos logísticos al comprador",
+          explanation: "El precio EXW puede ser bajo porque no incluye varias responsabilidades logísticas que aparecerán después.",
+        },
+      ],
+    },
+    "costo-total": {
+      durationMin: 26,
+      objectives: [
+        "Construir una estimación de costo total de importación.",
+        "Separar costo de mercancía, flete, seguro, impuestos y entrega final.",
+        "Detectar costos ocultos frecuentes antes de vender.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. El costo real no termina en la factura" },
+        {
+          type: "paragraph",
+          text: "El costo total de una importación es la suma de lo que pagas por el producto más todo lo necesario para llevarlo hasta donde realmente lo necesitas. Si vendes sin calcular ese costo completo, puedes perder margen aunque el producto se venda bien.",
+        },
+        {
+          type: "process",
+          title: "Cómo armar un costo total sencillo",
+          steps: [
+            { label: "Producto", detail: "Precio de compra, moneda, cantidad y condiciones comerciales." },
+            { label: "Origen", detail: "Recogida, documentos, despacho exportación y gastos antes del embarque." },
+            { label: "Transporte internacional", detail: "Flete marítimo, recargos y seguro si aplica." },
+            { label: "Destino", detail: "Gastos portuarios, aduana, impuestos, almacenajes y retiro." },
+            { label: "Entrega final", detail: "Transporte terrestre, descargue y costos internos hasta inventario disponible." },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "¿Cuál costo suele olvidarse cuando solo se mira el flete marítimo?",
+          options: ["Gastos portuarios y entrega en destino", "El color del contenedor", "El nombre comercial del buque"],
+          answer: "Gastos portuarios y entrega en destino",
+          explanation: "El flete no representa todo. En destino aparecen gastos locales, aduana, retiro y transporte interno.",
+        },
+        {
+          type: "checkpoint",
+          question: "Si sube el tipo de cambio, ¿qué parte del negocio puede afectarse?",
+          options: ["El costo final y el margen de venta", "Solo el número de tracking", "La longitud del contenedor"],
+          answer: "El costo final y el margen de venta",
+          explanation: "Muchas compras internacionales se pagan en moneda extranjera; el tipo de cambio puede cambiar el margen real.",
+        },
+      ],
+    },
+  },
+  "rutas-puertos": {
+    "seleccion-ruta": {
+      durationMin: 23,
+      objectives: [
+        "Comparar rutas directas y rutas con transbordo.",
+        "Entender cómo frecuencia, puerto y confiabilidad influyen en el plan.",
+        "Elegir una ruta según prioridad: costo, velocidad o estabilidad.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. Una ruta no se elige solo por distancia" },
+        {
+          type: "paragraph",
+          text: "Dos rutas pueden tener el mismo origen y destino, pero comportarse de forma muy distinta. Una puede ser más barata pero tener transbordo; otra puede ser directa pero menos frecuente. La decisión correcta depende de lo que más duele en tu operación: costo, tiempo, inventario o promesa al cliente.",
+        },
+        {
+          type: "conceptGrid",
+          title: "Factores para comparar rutas",
+          items: [
+            {
+              term: "Ruta directa",
+              explanation: "Menos manipulación y normalmente menor riesgo de retraso por transbordo.",
+              example: "Ideal para carga urgente o sensible.",
+            },
+            {
+              term: "Transbordo",
+              explanation: "La carga cambia de buque en un puerto intermedio. Puede ahorrar costo, pero añade incertidumbre.",
+              example: "Ruta Asia-Caribe con conexión en un hub.",
+            },
+            {
+              term: "Frecuencia",
+              explanation: "Cantidad de salidas disponibles. Si pierdes un buque, importa cuándo sale el siguiente.",
+              example: "Servicio semanal vs servicio cada 15 días.",
+            },
+            {
+              term: "Puerto alternativo",
+              explanation: "Puede reducir congestión o acercar la carga al destino final.",
+              example: "Elegir Cartagena o Buenaventura según destino interno.",
+            },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "Si tu prioridad es reducir manipulación de una carga frágil, ¿qué ruta suele convenir?",
+          options: ["Ruta directa si está disponible", "Ruta con muchos transbordos", "La ruta más larga sin revisar escalas"],
+          answer: "Ruta directa si está disponible",
+          explanation: "Menos transbordos suele significar menos movimientos físicos y menor exposición a errores.",
+        },
+        {
+          type: "checkpoint",
+          question: "¿Por qué importa la frecuencia del servicio?",
+          options: ["Porque define qué tan rápido puedes recuperarte si pierdes una salida", "Porque cambia el material del contenedor", "Porque elimina el riesgo de congestión"],
+          answer: "Porque define qué tan rápido puedes recuperarte si pierdes una salida",
+          explanation: "Una ruta frecuente ofrece más alternativas ante retrasos de producción o documentación.",
+        },
+      ],
+    },
+    "riesgos-eta": {
+      durationMin: 21,
+      objectives: [
+        "Identificar eventos que modifican el ETA.",
+        "Preparar planes de comunicación y contingencia.",
+        "Distinguir retrasos inevitables de retrasos gestionables.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. El ETA es una estimación, no una promesa absoluta" },
+        {
+          type: "paragraph",
+          text: "ETA significa llegada estimada. Cambia porque la logística vive en el mundo real: clima, congestión, inspecciones, disponibilidad de equipos y decisiones de naviera. Una empresa madura no solo pregunta 'cuándo llega', también pregunta 'qué hago si cambia'.",
+        },
+        {
+          type: "process",
+          title: "Cómo reaccionar ante un ETA cambiante",
+          steps: [
+            { label: "Confirmar fuente", detail: "Compara información de naviera, forwarder y terminal." },
+            { label: "Medir impacto", detail: "Evalúa inventario, ventas, citas de camión y costos de almacenaje." },
+            { label: "Comunicar", detail: "Avisa al cliente interno o externo con información concreta y fecha estimada." },
+            { label: "Replanificar", detail: "Ajusta transporte, bodega, documentación y prioridades comerciales." },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "Si el ETA se retrasa por congestión, ¿cuál es una buena primera acción?",
+          options: ["Confirmar información y ajustar citas de retiro", "Enviar otro contenedor sin revisar inventario", "Ignorar el cambio hasta que llegue la carga"],
+          answer: "Confirmar información y ajustar citas de retiro",
+          explanation: "La respuesta operativa empieza validando el cambio y evitando costos por recursos programados en una fecha equivocada.",
+        },
+        {
+          type: "checkpoint",
+          question: "¿Qué significa blank sailing?",
+          options: ["Una salida cancelada o omitida por la naviera", "Un contenedor sin etiquetas", "Una inspección obligatoria de aduana"],
+          answer: "Una salida cancelada o omitida por la naviera",
+          explanation: "Un blank sailing puede mover la carga a otra salida y cambiar fechas de embarque o llegada.",
+        },
+      ],
+    },
+  },
+  "supply-chain-internacional": {
+    "orden-inventario": {
+      durationMin: 25,
+      objectives: [
+        "Conectar compras internacionales con inventario y ventas.",
+        "Entender lead time, stock de seguridad y punto de reorden.",
+        "Evitar quiebres de stock por mala planificación logística.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. La cadena empieza antes del barco" },
+        {
+          type: "paragraph",
+          text: "Una compra internacional afecta caja, inventario, ventas y servicio al cliente. Si compras tarde, puedes quedarte sin stock; si compras demasiado, inmovilizas dinero. La logística no es un área aislada: conecta decisiones comerciales con operaciones reales.",
+        },
+        {
+          type: "conceptGrid",
+          title: "Conceptos de planificación",
+          items: [
+            {
+              term: "Lead time",
+              explanation: "Tiempo total desde que compras hasta que el producto está disponible para vender.",
+              example: "Producción 15 días + tránsito 25 días + aduana 3 días.",
+            },
+            {
+              term: "Stock de seguridad",
+              explanation: "Inventario extra para cubrir variaciones de demanda o retrasos.",
+              example: "Guardar 10 días de ventas promedio como colchón.",
+            },
+            {
+              term: "Punto de reorden",
+              explanation: "Nivel de inventario que dispara una nueva compra antes de quedarte sin producto.",
+              example: "Comprar cuando quedan 400 unidades si el lead time es largo.",
+            },
+            {
+              term: "Demanda",
+              explanation: "Ritmo al que tus clientes consumen el producto.",
+              example: "Ventas aumentan antes de temporada escolar.",
+            },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "Si el lead time total es 45 días, ¿cuándo conviene comprar?",
+          options: ["Antes de que el inventario llegue a cero", "Cuando el último cliente reclame", "Después de vender todo"],
+          answer: "Antes de que el inventario llegue a cero",
+          explanation: "Debes reordenar considerando el tiempo de reposición, no cuando ya no tienes producto.",
+        },
+        {
+          type: "checkpoint",
+          question: "¿Para qué sirve el stock de seguridad?",
+          options: ["Para cubrir retrasos o demanda inesperada", "Para reemplazar documentos de aduana", "Para evitar hacer seguimiento"],
+          answer: "Para cubrir retrasos o demanda inesperada",
+          explanation: "El stock de seguridad protege la operación cuando la realidad se mueve diferente al plan.",
+        },
+      ],
+    },
+    "proveedores-riesgos": {
+      durationMin: 22,
+      objectives: [
+        "Evaluar proveedores más allá del precio.",
+        "Identificar riesgos de documentación, calidad y cumplimiento.",
+        "Crear criterios simples de decisión para compras internacionales.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. Un proveedor barato puede ser caro si falla" },
+        {
+          type: "paragraph",
+          text: "En comercio internacional, el precio unitario importa, pero no es suficiente. Un proveedor que entrega tarde, documenta mal o empaca débilmente puede generar más costos que uno ligeramente más caro pero confiable.",
+        },
+        {
+          type: "process",
+          title: "Evaluación simple de proveedor",
+          steps: [
+            { label: "Confiabilidad", detail: "Historial de entregas, tiempos de respuesta y cumplimiento de fechas." },
+            { label: "Documentación", detail: "Capacidad para emitir factura, packing list, certificados y datos correctos." },
+            { label: "Calidad", detail: "Muestras, inspecciones, especificaciones y empaque adecuado." },
+            { label: "Comunicación", detail: "Claridad para avisar problemas antes de que sean urgencias." },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "¿Cuál señal de alerta es más seria?",
+          options: ["Proveedor que no confirma pesos ni documentos", "Proveedor que responde con ficha técnica", "Proveedor que avisa fechas de producción"],
+          answer: "Proveedor que no confirma pesos ni documentos",
+          explanation: "Sin datos confiables, el transporte, aduana y costos quedan expuestos a errores.",
+        },
+        {
+          type: "checkpoint",
+          question: "¿Por qué conviene pedir muestras o especificaciones?",
+          options: ["Para reducir riesgo de calidad antes de importar volumen", "Para cambiar el Incoterm automáticamente", "Para evitar todo trámite aduanero"],
+          answer: "Para reducir riesgo de calidad antes de importar volumen",
+          explanation: "Validar calidad antes de una compra grande evita reclamos, devoluciones y pérdidas.",
+        },
+      ],
+    },
+  },
+  "mercancias-especiales": {
+    "cadena-frio": {
+      durationMin: 24,
+      objectives: [
+        "Entender qué es la cadena de frío.",
+        "Identificar decisiones críticas antes y durante un envío reefer.",
+        "Reconocer riesgos de temperatura, energía y manipulación.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. La temperatura también viaja" },
+        {
+          type: "paragraph",
+          text: "En una carga refrigerada, no basta con usar un contenedor reefer. Debes definir temperatura, preparar el producto, revisar ventilación, asegurar energía en terminal y monitorear eventos. Un pequeño error puede dañar toda la carga.",
+        },
+        {
+          type: "process",
+          title: "Flujo básico de cadena de frío",
+          steps: [
+            { label: "Preenfriado", detail: "El producto debe entrar al contenedor a la temperatura correcta; el reefer mantiene, no enfría mágicamente." },
+            { label: "Set point", detail: "Se configura la temperatura requerida según producto y especificación." },
+            { label: "Energía", detail: "El equipo necesita conexión en terminal, buque y puntos de espera." },
+            { label: "Monitoreo", detail: "Se revisan alarmas, eventos y cambios de temperatura durante la operación." },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "¿Qué significa set point en un reefer?",
+          options: ["La temperatura configurada para el viaje", "El puerto de transbordo", "El código del contenedor"],
+          answer: "La temperatura configurada para el viaje",
+          explanation: "El set point es una instrucción clave para mantener condiciones del producto.",
+        },
+        {
+          type: "checkpoint",
+          question: "¿Por qué el preenfriado es importante?",
+          options: ["Porque el reefer mantiene temperatura, no corrige producto caliente rápidamente", "Porque elimina la necesidad de documentos", "Porque reduce el tamaño del contenedor"],
+          answer: "Porque el reefer mantiene temperatura, no corrige producto caliente rápidamente",
+          explanation: "Entrar producto caliente al contenedor puede romper la cadena de frío desde el inicio.",
+        },
+      ],
+    },
+    "carga-especial": {
+      durationMin: 23,
+      objectives: [
+        "Reconocer cargas peligrosas, frágiles y sobredimensionadas.",
+        "Entender por qué necesitan declaración, embalaje o equipo especial.",
+        "Tomar decisiones de seguridad antes de cotizar.",
+      ],
+      blocks: [
+        { type: "heading", text: "1. No toda carga se maneja igual" },
+        {
+          type: "paragraph",
+          text: "Algunas mercancías requieren tratamiento especial por seguridad, tamaño, fragilidad o regulación. Identificarlas tarde puede bloquear una reserva, generar multas o poner en riesgo personas y mercancías.",
+        },
+        {
+          type: "conceptGrid",
+          title: "Tipos de carga especial",
+          items: [
+            {
+              term: "Peligrosa",
+              explanation: "Puede ser inflamable, corrosiva, tóxica u otra categoría regulada.",
+              example: "Químicos que requieren declaración y embalaje aprobado.",
+            },
+            {
+              term: "Sobredimensionada",
+              explanation: "No cabe en dimensiones estándar y requiere equipo o permisos especiales.",
+              example: "Maquinaria en flat rack.",
+            },
+            {
+              term: "Frágil",
+              explanation: "Necesita embalaje, manipulación y estiba cuidadosa.",
+              example: "Vidrio, equipos médicos o instrumentos de precisión.",
+            },
+            {
+              term: "Alto valor",
+              explanation: "Requiere controles de seguridad, seguro y seguimiento más estricto.",
+              example: "Electrónica o componentes costosos.",
+            },
+          ],
+        },
+        {
+          type: "checkpoint",
+          question: "Si una mercancía es peligrosa, ¿qué debes hacer antes de reservar?",
+          options: ["Declararla y validar requisitos con el operador", "Ocultarla para ahorrar tiempo", "Usar cualquier contenedor sin avisar"],
+          answer: "Declararla y validar requisitos con el operador",
+          explanation: "La seguridad depende de declarar correctamente la carga y cumplir reglas de transporte.",
+        },
+        {
+          type: "checkpoint",
+          question: "Una carga que excede altura estándar podría necesitar:",
+          options: ["Open top o flat rack según el caso", "Siempre reefer", "Ningún equipo especial"],
+          answer: "Open top o flat rack según el caso",
+          explanation: "Las dimensiones definen si el equipo estándar sirve o si se necesita alternativa.",
+        },
+      ],
+    },
+  },
   "fundamentos-importacion": {},
   "operaciones-portuarias": {},
   "contenedores-rutas": {},
