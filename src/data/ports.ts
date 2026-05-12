@@ -1,0 +1,68 @@
+import type { Port } from "@/types/logistics";
+
+export const PORTS: Port[] = [
+  {
+    id: "callao",
+    code: "PECLL",
+    name: "Callao",
+    country: "Perú",
+    lat: -12.0464,
+    lon: -77.0428,
+  },
+  {
+    id: "valparaiso",
+    code: "CLVAP",
+    name: "Valparaíso",
+    country: "Chile",
+    lat: -33.0458,
+    lon: -71.6203,
+  },
+  {
+    id: "cartagena",
+    code: "COCTG",
+    name: "Cartagena",
+    country: "Colombia",
+    lat: 10.391,
+    lon: -75.4794,
+  },
+  {
+    id: "veracruz",
+    code: "MXVER",
+    name: "Veracruz",
+    country: "México",
+    lat: 19.1738,
+    lon: -96.1342,
+  },
+  {
+    id: "santos",
+    code: "BRSSZ",
+    name: "Santos",
+    country: "Brasil",
+    lat: -23.9608,
+    lon: -46.3334,
+  },
+  {
+    id: "buenosaires",
+    code: "ARBUE",
+    name: "Buenos Aires",
+    country: "Argentina",
+    lat: -34.6037,
+    lon: -58.3816,
+  },
+  {
+    id: "barcelona",
+    code: "ESBCN",
+    name: "Barcelona",
+    country: "España",
+    lat: 41.3851,
+    lon: 2.1734,
+  },
+  {
+    id: "rotterdam",
+    code: "NLRTM",
+    name: "Róterdam",
+    country: "Países Bajos",
+    lat: 51.9244,
+    lon: 4.4777,
+  },
+];
